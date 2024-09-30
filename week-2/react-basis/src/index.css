@@ -71,3 +71,7 @@ button:focus-visible {
   background: red;
   color: white;
 }
+
+.circle {
+  border-radius: 50%;
+}

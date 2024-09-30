@@ -1,8 +1,8 @@
 import "./App.css";
-import Counter from "./components/Counter";
+import InputExample from "./components/InputExample";
 
 const App = () => {
-  return <Counter />;
+  return <InputExample />;
 };
 
 export default App;

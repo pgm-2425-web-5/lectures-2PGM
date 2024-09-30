@@ -1,0 +1,12 @@
+.btn {
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.btn-primary {
+  background-color: blue;
+}
+
+.btn-secondary {
+  background-color: red;
+}
