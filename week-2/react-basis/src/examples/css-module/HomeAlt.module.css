@@ -1,0 +1,17 @@
+.home {
+  width: 100%;
+}
+
+.home__title {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.home__info {
+  padding-top: 5rem;
+}
+
+.button {
+  background-color: blue;
+}

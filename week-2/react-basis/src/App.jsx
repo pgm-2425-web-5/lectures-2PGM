@@ -1,8 +1,9 @@
-import "./App.css";
-import InputExample from "./components/InputExample";
+import HomeAlt from "./examples/css-module/HomeAlt";
+import Home from "./examples/css/Home";
+import InputExample from "./examples/InputExample";
 
 const App = () => {
-  return <InputExample />;
+  return <HomeAlt />;
 };
 
 export default App;
