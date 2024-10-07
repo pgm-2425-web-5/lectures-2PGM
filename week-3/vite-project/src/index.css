@@ -24,6 +24,10 @@ a:hover {
 
 body {
   margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
 h1 {
@@ -60,27 +64,5 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
-  }
-}
-
-.counter {
-  background: red;
-  color: white;
-}
-
-.circle {
-  border-radius: 50%;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-
-  & .grid-item {
-    width: 13rem;
-    aspect-ratio: 1 / 1;
-    border: 1px white solid;
-    padding: 1rem;
   }
 }

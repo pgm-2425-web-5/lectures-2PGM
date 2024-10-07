@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Auto",
+    "brand": "Hot Wheels"
+  },
+  {
+    "name": "Model S",
+    "brand": "Tesla"
+  },
+  {
+    "name": "Model 3",
+    "brand": "Tesla"
+  },
+  {
+    "name": "Model X",
+    "brand": "Tesla"
+  },
+  {
+    "name": "Model Y",
+    "brand": "Tesla"
+  }
+]
