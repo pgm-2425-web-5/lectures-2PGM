@@ -1,34 +1,36 @@
-import { useEffect, useState } from "react";
 import ListItem from "@design/ListItem/ListItem";
+import LoadingIndicator from "@design/LoadingIndicator/LoadingIndicator";
+import { getUsers } from "@core/modules/users/api.js";
+import { formatAddress } from "@core/modules/users/utils";
+import { useQuery } from "@tanstack/react-query";
 
 const UserList = () => {
-  const [users, setUsers] = useState();
-  const [error, setError] = useState();
+  const {
+    isLoading,
+    isError,
+    error,
+    data: users,
+  } = useQuery({
+    queryKey: ["users"],
+    queryFn: getUsers,
+  });
 
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/users`)
-      .then((response) => response.json())
-      .then((data) => {
-        setUsers(data);
-      })
-      .catch((error) => {
-        setError(String(error));
-      });
-  }, []);
-
-  if (error) {
+  if (isError) {
     return <p>{error}</p>;
   }
 
-  if (!users) {
-    return <p>Loading</p>;
+  if (isLoading) {
+    return <LoadingIndicator />;
   }
 
   return (
     <div>
       <ul>
         {users.map((user) => (
-          <ListItem key={user.id}>{user.name}</ListItem>
+          <ListItem key={user.id}>
+            <p>{user.name}</p>
+            <p>{formatAddress(user.address)}</p>
+          </ListItem>
         ))}
       </ul>
     </div>

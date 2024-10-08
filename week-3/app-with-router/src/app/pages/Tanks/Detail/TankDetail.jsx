@@ -1,12 +1,13 @@
 import { useParams } from "react-router";
+import Container from "@design/Container/Container";
 
 const TankDetail = () => {
   const params = useParams();
 
   return (
-    <div>
+    <Container>
       <h1>Tank Detail {params.slug}</h1>
-    </div>
+    </Container>
   );
 };
 

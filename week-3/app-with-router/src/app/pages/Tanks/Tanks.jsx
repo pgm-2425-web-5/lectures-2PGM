@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import Container from "@design/Container/Container";
 
 const Tanks = () => {
   return (
-    <>
+    <Container>
       <h1>Tanks</h1>
       <ul>
         <li>
@@ -15,7 +16,7 @@ const Tanks = () => {
           <Link to="/tanks/t-90">T-90</Link>
         </li>
       </ul>
-    </>
+    </Container>
   );
 };
 
