@@ -39,7 +39,7 @@ const PokeOverview = () => {
       <List type="grid">
         {pokemon.results.map((poke) => (
           <ListItem key={poke.url}>
-            <Link to={`pokemon/${getIdFromUrl(poke.url)}`}>{poke.name}</Link>
+            <Link to={`/pokemon/${getIdFromUrl(poke.url)}`}>{poke.name}</Link>
           </ListItem>
         ))}
       </List>

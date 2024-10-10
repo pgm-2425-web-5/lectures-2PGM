@@ -4,7 +4,7 @@ import "@style/index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import App from "@functional/App/App.jsx";
 import Games from "@pages/Games/Games";
 import PokeOverview from "@pages/Pokemon/Overview/PokeOverview";
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
+        path: "/pokemon",
         element: <PokeOverview />,
       },
       {
@@ -29,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/games",
         element: <Games />,
+      },
+      {
+        path: "/",
+        element: <Navigate to="/pokemon" replace />,
       },
     ],
   },

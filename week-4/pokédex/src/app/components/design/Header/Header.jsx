@@ -1,5 +1,5 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Container from "../Container/Container";
 
 const Header = () => {
@@ -9,10 +9,10 @@ const Header = () => {
         <nav className="header__nav">
           <ul className="nav">
             <li className="nav__item">
-              <Link to="/">Pokemon</Link>
+              <NavLink to="/pokemon">Pokemon</NavLink>
             </li>
             <li className="nav__item">
-              <Link to="/games">Games</Link>
+              <NavLink to="/games">Games</NavLink>
             </li>
           </ul>
         </nav>

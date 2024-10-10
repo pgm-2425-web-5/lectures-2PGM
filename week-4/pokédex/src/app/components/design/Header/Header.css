@@ -14,4 +14,8 @@
 
 .nav__item {
   color: var(--orange-900);
+
+  .active {
+    font-weight: var(--font-weight-semibold);
+  }
 }
