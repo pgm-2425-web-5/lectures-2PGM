@@ -34,10 +34,9 @@ const Games = () => {
 
   return (
     <Container>
-      <Title level={1}>Pokémon</Title>
+      <Title level={1}>Games</Title>
       <List>
         <ListItem>
-          <Subtitle level={2}></Subtitle>
           <List type="grid">
             {games.results.map((game) => (
               <ListItem key={game.id}>{game.name}</ListItem>

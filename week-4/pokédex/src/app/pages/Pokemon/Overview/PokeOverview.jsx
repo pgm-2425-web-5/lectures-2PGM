@@ -5,9 +5,9 @@ import ErrorMessage from "@design/Error/ErrorMessage";
 import List from "@design/List/List";
 import ListItem from "@design/List/Item/ListItem";
 import LoadingIndicator from "@design/Loading/LoadingIndicator";
-import Title from "@design/Typography/Title";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import Title from "@design/Typography/Title";
 
 const PokeOverview = () => {
   const { isLoading, isError, error, data } = useQuery({
