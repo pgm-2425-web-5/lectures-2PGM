@@ -9,6 +9,8 @@ import App from "@functional/App/App.jsx";
 import Games from "@pages/Games/Games";
 import PokeOverview from "@pages/Pokemon/Overview/PokeOverview";
 import PokeDetail from "@pages/Pokemon/Detail/PokeDetail";
+import Posts from "@pages/Posts/Posts";
+import CreatePost from "@pages/Posts/CreatePost";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -20,15 +22,33 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/pokemon",
-        element: <PokeOverview />,
-      },
-      {
-        path: "/pokemon/:id",
-        element: <PokeDetail />,
+        children: [
+          {
+            path: "",
+            element: <PokeOverview />,
+          },
+          {
+            path: ":id",
+            element: <PokeDetail />,
+          },
+        ],
       },
       {
         path: "/games",
         element: <Games />,
+      },
+      {
+        path: "/posts",
+        children: [
+          {
+            path: "",
+            element: <Posts />,
+          },
+          {
+            path: "create",
+            element: <CreatePost />,
+          },
+        ],
       },
       {
         path: "/",

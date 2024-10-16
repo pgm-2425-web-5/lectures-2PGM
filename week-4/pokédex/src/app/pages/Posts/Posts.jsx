@@ -1,4 +1,4 @@
-import { getGames } from "@core/modules/games/api";
+import { getPosts } from "@core/modules/posts/api";
 import Container from "@design/Container/Container";
 import ErrorMessage from "@design/Error/ErrorMessage";
 import List from "@design/List/List";
@@ -6,11 +6,12 @@ import ListItem from "@design/List/Item/ListItem";
 import LoadingIndicator from "@design/Loading/LoadingIndicator";
 import Title from "@design/Typography/Title";
 import { useQuery } from "@tanstack/react-query";
+import Button from "@design/Button/Button";
 
-const Games = () => {
+const Posts = () => {
   const { isLoading, isError, error, data } = useQuery({
-    queryFn: getGames,
-    queryKey: ["pokemon"],
+    queryFn: getPosts,
+    queryKey: ["posts"],
   });
 
   if (isLoading) {
@@ -29,16 +30,17 @@ const Games = () => {
     );
   }
 
-  const { data: games } = data;
+  const { data: posts } = data;
 
   return (
     <Container>
-      <Title level={1}>Games</Title>
+      <Title level={1}>Posts</Title>
+      <Button to={"/posts/create"}>Create post</Button>
       <List>
         <ListItem>
-          <List type="grid">
-            {games.results.map((game) => (
-              <ListItem key={game.id}>{game.name}</ListItem>
+          <List>
+            {posts.map((post) => (
+              <ListItem key={post.id}>{post.title}</ListItem>
             ))}
           </List>
         </ListItem>
@@ -47,4 +49,4 @@ const Games = () => {
   );
 };
 
-export default Games;
+export default Posts;
