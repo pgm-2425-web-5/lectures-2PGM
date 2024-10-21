@@ -11,6 +11,7 @@ import PokeOverview from "@pages/Pokemon/Overview/PokeOverview";
 import PokeDetail from "@pages/Pokemon/Detail/PokeDetail";
 import Posts from "@pages/Posts/Posts";
 import CreatePost from "@pages/Posts/CreatePost";
+import Login from "@pages/Onboarding/Login";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
+      {
+        path: "/login",
+        element: <Login />,
+      },
       {
         path: "/pokemon",
         children: [
