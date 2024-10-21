@@ -1,0 +1,10 @@
+.sprites-view {
+  margin: var(--spacing-base) 0 var(--spacing-2xl) 0;
+}
+
+.sprites-view__buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}

@@ -1,0 +1,6 @@
+.description-list__label {
+}
+
+.description-list__value {
+  font-weight: var(--font-weight-semibold);
+}

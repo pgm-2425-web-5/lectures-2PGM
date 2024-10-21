@@ -1,0 +1,14 @@
+.input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--gray-300);
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+textarea.input {
+  width: 100%;
+  resize: vertical;
+}

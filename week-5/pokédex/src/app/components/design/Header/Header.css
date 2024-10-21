@@ -1,0 +1,21 @@
+.header {
+  padding: var(--spacing-sm) 0;
+  background: var(--orange-100);
+  margin-bottom: var(--spacing-lg);
+}
+
+.nav {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  gap: var(--spacing-lg);
+}
+
+.nav__item {
+  color: var(--orange-900);
+
+  .active {
+    font-weight: var(--font-weight-semibold);
+  }
+}
