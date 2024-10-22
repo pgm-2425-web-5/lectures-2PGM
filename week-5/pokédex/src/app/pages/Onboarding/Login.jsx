@@ -3,9 +3,11 @@ import Button from "@design/Button/Button";
 import Container from "@design/Container/Container";
 import ErrorMessage from "@design/Error/ErrorMessage";
 import Input from "@design/Form/Input/Input";
+import useAuth from "@functional/Auth/useAuth";
 import { useMutation } from "@tanstack/react-query";
 import { Field, Formik } from "formik";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 
 const Schema = yup.object().shape({
@@ -14,6 +16,8 @@ const Schema = yup.object().shape({
 });
 
 const Login = () => {
+  const navigate = useNavigate();
+  const { setUser } = useAuth();
   const { mutate, isPending } = useMutation({
     mutationFn: login,
   });
@@ -23,7 +27,8 @@ const Login = () => {
   const handleLogin = (values) => {
     mutate(values, {
       onSuccess: (data) => {
-        console.log(data);
+        setUser(data);
+        navigate("/pokemon", { replace: true });
       },
       onError: (error) => {
         setError(error.message);
@@ -34,7 +39,7 @@ const Login = () => {
   return (
     <Container>
       <Formik initialValues={{ email: "", password: "" }} validationSchema={Schema} onSubmit={handleLogin}>
-        {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
+        {({ errors, touched, handleSubmit }) => (
           <form onSubmit={handleSubmit} autoComplete="off">
             {error && <ErrorMessage message={error} />}
             <Field
@@ -45,15 +50,13 @@ const Login = () => {
               disabled={isPending}
               error={touched.email && errors.email}
             />
-            <Input
-              value={values.password}
+            <Field
+              as={Input}
               label="Password"
               type="password"
               name="password"
-              error={touched.password && errors.password}
-              onChange={handleChange}
-              onBlur={handleBlur}
               disabled={isPending}
+              error={touched.password && errors.password}
             />
             <Button type="submit" disabled={isPending}>
               Login

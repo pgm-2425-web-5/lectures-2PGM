@@ -12,6 +12,7 @@ import PokeDetail from "@pages/Pokemon/Detail/PokeDetail";
 import Posts from "@pages/Posts/Posts";
 import CreatePost from "@pages/Posts/CreatePost";
 import Login from "@pages/Onboarding/Login";
+import AuthenticationProvider from "@functional/Auth/AuthenticationProvider";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -65,8 +66,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <AuthenticationProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </AuthenticationProvider>
   </StrictMode>
 );
