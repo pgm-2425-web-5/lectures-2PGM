@@ -41,9 +41,8 @@ const PokeOverview = () => {
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0, y: "1rem" }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
         exit={{ opacity: 0 }}
-        className="container"
       >
         <Container>
           <p>Timestamp test: {format(parseISO(timestamp, new Date()), "dd/MM/yyyy 'in kwartaal ' Q")}</p>
