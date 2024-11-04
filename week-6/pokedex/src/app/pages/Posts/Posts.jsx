@@ -14,6 +14,8 @@ const Posts = () => {
     queryKey: ["posts"],
   });
 
+  console.log(data);
+
   if (isLoading) {
     return (
       <Container>

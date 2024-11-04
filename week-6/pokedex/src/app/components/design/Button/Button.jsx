@@ -43,14 +43,4 @@ Button.propTypes = {
   "aria-label": PropTypes.string,
 };
 
-Button.defaultProps = {
-  className: "",
-  color: "primary",
-  size: "default",
-  disabled: false,
-  type: "button",
-  children: "Label",
-  "aria-label": "Label",
-};
-
 export default Button;

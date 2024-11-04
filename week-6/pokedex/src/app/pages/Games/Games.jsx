@@ -38,7 +38,7 @@ const Games = () => {
         <ListItem>
           <List type="grid">
             {games.results.map((game) => (
-              <ListItem key={game.id}>{game.name}</ListItem>
+              <ListItem key={game.url}>{game.name}</ListItem>
             ))}
           </List>
         </ListItem>
