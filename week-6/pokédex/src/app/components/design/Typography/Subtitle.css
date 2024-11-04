@@ -1,0 +1,19 @@
+.subtitle {
+  font-size: var(--text-size-base);
+  font-weight: var(--font-weight-regular);
+  margin: var(--spacing-xl) 0 var(--spacing-sm) 0;
+
+  user-select: none;
+}
+
+.subtitle--default {
+  color: var(--orange-500);
+}
+
+@media print {
+  .subtitle {
+    font-size: var(--text-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-color);
+  }
+}

@@ -1,0 +1,34 @@
+.btn-icon {
+  font-size: 2rem;
+  text-align: center;
+
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.2s ease-out;
+
+  user-select: none;
+
+  aspect-ratio: 1;
+}
+
+.btn-icon--size-small {
+  font-size: 1.325rem;
+}
+
+.btn-icon {
+  box-shadow: none;
+  background-color: transparent;
+  color: var(--orange-900);
+}
+
+.btn-icon:not(:disabled):hover {
+  color: var(--orange-800);
+}
+
+.btn-icon:disabled {
+  background-color: var(--gray-200);
+  color: var(--gray-300);
+  cursor: not-allowed;
+}

@@ -1,0 +1,27 @@
+.input-group {
+  margin-bottom: 10px;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--gray-300);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.input--error {
+  border-color: var(--red-500);
+}
+
+textarea.input {
+  width: 100%;
+  resize: vertical;
+}
+
+.input-error {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--red-500);
+}

@@ -1,0 +1,12 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: var(--spacing-xs);
+}
+
+.list--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: var(--spacing-xs);
+}
